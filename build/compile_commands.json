@@ -1,0 +1,42 @@
+[
+{
+  "directory": "/home/yy/muduoFile/build",
+  "command": "/usr/bin/g++ -Dmymuduo_EXPORTS   -std=c++11 -g -fPIC -o CMakeFiles/mymuduo.dir/Channel.o -c /home/yy/muduoFile/Channel.cpp",
+  "file": "/home/yy/muduoFile/Channel.cpp"
+},
+{
+  "directory": "/home/yy/muduoFile/build",
+  "command": "/usr/bin/g++ -Dmymuduo_EXPORTS   -std=c++11 -g -fPIC -o CMakeFiles/mymuduo.dir/DefaultPoller.o -c /home/yy/muduoFile/DefaultPoller.cpp",
+  "file": "/home/yy/muduoFile/DefaultPoller.cpp"
+},
+{
+  "directory": "/home/yy/muduoFile/build",
+  "command": "/usr/bin/g++ -Dmymuduo_EXPORTS   -std=c++11 -g -fPIC -o CMakeFiles/mymuduo.dir/EventLoop.o -c /home/yy/muduoFile/EventLoop.cpp",
+  "file": "/home/yy/muduoFile/EventLoop.cpp"
+},
+{
+  "directory": "/home/yy/muduoFile/build",
+  "command": "/usr/bin/g++ -Dmymuduo_EXPORTS   -std=c++11 -g -fPIC -o CMakeFiles/mymuduo.dir/InetAddress.o -c /home/yy/muduoFile/InetAddress.cpp",
+  "file": "/home/yy/muduoFile/InetAddress.cpp"
+},
+{
+  "directory": "/home/yy/muduoFile/build",
+  "command": "/usr/bin/g++ -Dmymuduo_EXPORTS   -std=c++11 -g -fPIC -o CMakeFiles/mymuduo.dir/Poller.o -c /home/yy/muduoFile/Poller.cpp",
+  "file": "/home/yy/muduoFile/Poller.cpp"
+},
+{
+  "directory": "/home/yy/muduoFile/build",
+  "command": "/usr/bin/g++ -Dmymuduo_EXPORTS   -std=c++11 -g -fPIC -o CMakeFiles/mymuduo.dir/TcpServer.o -c /home/yy/muduoFile/TcpServer.cpp",
+  "file": "/home/yy/muduoFile/TcpServer.cpp"
+},
+{
+  "directory": "/home/yy/muduoFile/build",
+  "command": "/usr/bin/g++ -Dmymuduo_EXPORTS   -std=c++11 -g -fPIC -o CMakeFiles/mymuduo.dir/Timestamp.o -c /home/yy/muduoFile/Timestamp.cpp",
+  "file": "/home/yy/muduoFile/Timestamp.cpp"
+},
+{
+  "directory": "/home/yy/muduoFile/build",
+  "command": "/usr/bin/g++ -Dmymuduo_EXPORTS   -std=c++11 -g -fPIC -o CMakeFiles/mymuduo.dir/logger.o -c /home/yy/muduoFile/logger.cpp",
+  "file": "/home/yy/muduoFile/logger.cpp"
+}
+]
