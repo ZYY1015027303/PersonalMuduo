@@ -39,7 +39,7 @@ private:
     using EventList = std::vector<epoll_event>;
 
     int epollfd_;
-    EventList event_;
+    EventList events_;
 };
 
 #endif

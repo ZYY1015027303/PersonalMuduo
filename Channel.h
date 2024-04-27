@@ -40,7 +40,7 @@ public:
     void tie(const std::shared_ptr<void>&);
 
     int fd() const { return fd_; }
-    int event() const { return events_; }
+    int events() const { return events_; }
     void set_revent(int revt) { revents_ = revt; }
     
 
