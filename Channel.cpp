@@ -33,15 +33,13 @@ void Channel::tie(const std::shared_ptr<void> &obj)
  */
 void Channel::update()
 {
-    // TODO
-    // loop_->updateChannel(this);
+    loop_->updateChannel(this);
 }
 
 // Delete current Channel
 void Channel::remove()
 {
-    // TODO
-    // loop_->removeChannel(this);
+    loop_->removeChannel(this);
 }
 
 void Channel::handlEvent(Timestamp receiveTime)
@@ -60,12 +58,14 @@ void Channel::handlEvent(Timestamp receiveTime)
     }
 }
 
+// 根据poller通知的channel发生的具体事件， 由channel负责调用具体的回调操作
 void Channel::handEventWithGuard(Timestamp receiveTime)
 {
-    LOG_INFO("Channel event handle revent(%d)\n", revents_);
+    LOG_INFO("channel handleEvent revents:%d\n", revents_);
+
     if ((revents_ & EPOLLHUP) && !(revents_ & EPOLLIN))
     {
-        if (closeCallback_) 
+        if (closeCallback_)
         {
             closeCallback_();
         }
@@ -73,9 +73,17 @@ void Channel::handEventWithGuard(Timestamp receiveTime)
 
     if (revents_ & EPOLLERR)
     {
-        if (errorCallback_) 
+        if (errorCallback_)
         {
             errorCallback_();
+        }
+    }
+
+    if (revents_ & (EPOLLIN | EPOLLPRI))
+    {
+        if (readCallback_)
+        {
+            readCallback_(receiveTime);
         }
     }
 
