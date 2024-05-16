@@ -40,7 +40,7 @@ public:
     bool hasChannel(Channel* channel);
 
     // judge EventLoop Obj whether in owner Thread
-    bool isInLoopThread() const { threadId_ == CurrentThread::tid(); }
+    bool isInLoopThread() const { return threadId_ == CurrentThread::tid(); }
 
 private:
     void handleRead();
