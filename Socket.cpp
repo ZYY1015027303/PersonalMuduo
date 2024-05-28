@@ -4,6 +4,9 @@
 
 #include <unistd.h>
 #include <string.h>
+#include <sys/types.h>          /* See NOTES */
+#include <sys/socket.h>
+#include <netinet/tcp.h>
 
 Socket::~Socket()
 {
@@ -12,7 +15,7 @@ Socket::~Socket()
 
 void Socket::bindAddress(const InetAddress &localaddr)
 {
-    if (0 != bind(sockfd_, (sockaddr*)localaddr.getSockAddr(), sizeof sockaddr_in))
+    if (bind(sockfd_, (sockaddr*)(localaddr.getSockAddr()), sizeof(sockaddr_in)) != 0)
     {
         LOG_ERROR("bind socket fail %d", sockfd_);
     }
@@ -55,17 +58,17 @@ void Socket::setTcpDelay(bool on)
 void Socket::setReuseAddr(bool on)
 {
     int optval = on ? 1 : 0;
-    ::setsockopt(sockfd_, SQL_SOCKET, SO_REUSEADDR, &optval, sizeof optval);
+    ::setsockopt(sockfd_, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof optval);
 }
 
 void Socket::setReusePort(bool on)
 {
     int optval = on ? 1 : 0;
-    ::setsockopt(sockfd_, SQL_SOCKET, SO_REUSEPORT, &optval, sizeof optval);
+    ::setsockopt(sockfd_, SOL_SOCKET, SO_REUSEPORT, &optval, sizeof optval);
 }
 
 void Socket::setKeepAlive(bool on)
 {
     int optval = on ? 1 : 0;
-    ::setsockopt(sockfd_, SQL_SOCKET, SO_KEEPALIVE, &optval, sizeof optval);
+    ::setsockopt(sockfd_, SOL_SOCKET, SO_KEEPALIVE, &optval, sizeof optval);
 }
